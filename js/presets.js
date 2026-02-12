@@ -21,6 +21,16 @@ const BUILTIN_PRESETS = [
     ],
   },
   {
+    id: '45min',
+    name: '45 min',
+    points: [
+      { timeMs: 20 * 60_000, label: '20 min', urgency: 'info' },
+      { timeMs: 35 * 60_000, label: '10 min left', urgency: 'warning' },
+      { timeMs: 40 * 60_000, label: '5 min left', urgency: 'urgent' },
+      { timeMs: 45 * 60_000, label: 'Time!', urgency: 'urgent' },
+    ],
+  },
+  {
     id: '60min',
     name: '60 min',
     points: [

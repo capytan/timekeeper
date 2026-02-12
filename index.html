@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Meeting Timekeeper - Background notification timer for meetings">
+  <title>Timekeeper</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="header__title">Timekeeper</h1>
+      <div class="header__actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <span class="icon-btn__icon" data-icon="theme">&#9788;</span>
+        </button>
+        <button id="sound-toggle" class="icon-btn" aria-label="Toggle sound" title="Toggle sound">
+          <span class="icon-btn__icon" data-icon="sound">&#9835;</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="timer-section" aria-label="Timer">
+        <div class="timer-display" role="timer" aria-live="off" aria-atomic="true">
+          <output id="timer-value" class="timer-display__value">00:00:00</output>
+        </div>
+        <div class="timer-controls">
+          <button id="btn-start" class="btn btn--primary">Start</button>
+          <button id="btn-pause" class="btn btn--secondary" disabled>Pause</button>
+          <button id="btn-reset" class="btn btn--secondary" disabled>Reset</button>
+        </div>
+      </section>
+
+      <section class="presets-section" aria-label="Presets">
+        <h2 class="section-title">Presets</h2>
+        <div id="preset-list" class="preset-list" role="radiogroup" aria-label="Meeting presets">
+          <!-- Preset buttons injected by JS -->
+        </div>
+      </section>
+
+      <section class="volume-section" aria-label="Volume">
+        <label for="volume-slider" class="volume-label">Volume</label>
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="70" aria-label="Volume">
+        <span id="volume-value" class="volume-value">70%</span>
+      </section>
+
+      <section class="notifications-section" aria-label="Notification points">
+        <div class="notifications-header">
+          <h2 class="section-title">Notifications</h2>
+          <button id="btn-add-notification" class="btn btn--small">+ Add</button>
+        </div>
+
+        <div id="notification-form" class="notification-form" hidden>
+          <div class="notification-form__row">
+            <label class="notification-form__label">
+              Time (min)
+              <input type="number" id="nf-minutes" class="input" min="0" max="480" step="1" placeholder="25">
+            </label>
+            <label class="notification-form__label">
+              Sec
+              <input type="number" id="nf-seconds" class="input" min="0" max="59" step="1" placeholder="0">
+            </label>
+          </div>
+          <div class="notification-form__row">
+            <label class="notification-form__label notification-form__label--wide">
+              Label
+              <input type="text" id="nf-label" class="input" maxlength="50" placeholder="e.g. Halfway">
+            </label>
+          </div>
+          <fieldset class="notification-form__urgency">
+            <legend>Urgency</legend>
+            <label class="radio-label">
+              <input type="radio" name="nf-urgency" value="info" checked> Info
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="nf-urgency" value="warning"> Warning
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="nf-urgency" value="urgent"> Urgent
+            </label>
+          </fieldset>
+          <div class="notification-form__actions">
+            <button id="nf-save" class="btn btn--primary btn--small">Save</button>
+            <button id="nf-cancel" class="btn btn--small">Cancel</button>
+          </div>
+        </div>
+
+        <ul id="notification-list" class="notification-list" aria-label="Notification points list">
+          <!-- Notification items injected by JS -->
+        </ul>
+      </section>
+
+      <section class="browser-notification-section">
+        <button id="btn-enable-notifications" class="btn btn--small btn--outline">
+          Enable browser notifications
+        </button>
+        <span id="notification-status" class="notification-status"></span>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

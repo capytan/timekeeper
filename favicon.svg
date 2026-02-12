@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    :root { --stroke: #1a1a2e; --fill-bg: #ffffff; --accent: #4a90d9; }
+    @media (prefers-color-scheme: dark) {
+      :root { --stroke: #e0e0e0; --fill-bg: #1a1a2e; --accent: #6bb0f0; }
+    }
+  </style>
+  <!-- Stopwatch button top -->
+  <rect x="28" y="4" width="8" height="6" rx="2" fill="var(--stroke)"/>
+  <!-- Button stem -->
+  <rect x="30.5" y="9" width="3" height="4" fill="var(--stroke)"/>
+  <!-- Clock body -->
+  <circle cx="32" cy="36" r="22" fill="var(--fill-bg)" stroke="var(--stroke)" stroke-width="3"/>
+  <!-- Inner circle -->
+  <circle cx="32" cy="36" r="18" fill="none" stroke="var(--stroke)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Hour marks -->
+  <line x1="32" y1="17" x2="32" y2="21" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="32" y1="51" x2="32" y2="55" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="13" y1="36" x2="17" y2="36" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round"/>
+  <line x1="47" y1="36" x2="51" y2="36" stroke="var(--stroke)" stroke-width="2" stroke-linecap="round"/>
+  <!-- Minute hand -->
+  <line x1="32" y1="36" x2="32" y2="22" stroke="var(--stroke)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Second hand (accent color, pointing to ~10 min position) -->
+  <line x1="32" y1="36" x2="43" y2="28" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Center dot -->
+  <circle cx="32" cy="36" r="2.5" fill="var(--accent)"/>
+</svg>
